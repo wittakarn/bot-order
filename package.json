@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development"
+    "start": "echo",
+    "cypress:run": "node_modules/.bin/cypress run",
+    "cypress:open": "node_modules/.bin/cypress open",
+    "build": "node_modules/.bin/webpack --output-filename out.js --entry ./cypress/integration/spec.ts",
+    "lint": "node_modules/.bin/tslint --project ./tsconfig.json",
+    "postlint": "npm run tsc",
+    "tsc": "node_modules/.bin/tsc --pretty --noEmit",
+    "precypress:run": "npm run lint"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +21,7 @@
   "devDependencies": {
     "@types/puppeteer": "^1.11.1",
     "awesome-typescript-loader": "^5.2.1",
+    "cypress": "^3.1.4",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.1.6"
   }

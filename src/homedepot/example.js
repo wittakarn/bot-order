@@ -12,9 +12,9 @@ const puppeteer = require('puppeteer');
         width: 1440,
         height: 900
     });
-    await page.goto('https://google.com');
+    await page.goto('https://www.dedbit.com/');
     await page.screenshot({
-        path: 'google.png'
+        path: 'dedbit.png'
     });
 
     //   await browser.close();
